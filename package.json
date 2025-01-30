@@ -1,6 +1,6 @@
 {
   "name": "sequential-command",
-  "displayName": "sequential-command",
+  "displayName": "Sequential Command",
   "description": "Many commands into one command for VSCode",
   "version": "0.0.1",
   "engines": {
@@ -19,11 +19,12 @@
       "properties": {
         "sequential-command.sequenceTimeout": {
           "type": "number",
-          "default": 3000,
-          "description": "Timeout to clear the command sequence."
+          "description": "Timeout to clear the command sequence (msec).",
+          "default": 3000
         },
         "sequential-command.definitions": {
           "type": "object",
+          "description": "Command definition slots.\n{\"(A to Z)\" => [\"some.command0\",\"other.command1\"], ...}",
           "default": {
             "A": [
               "cursorLineStart",
@@ -59,8 +60,7 @@
             "X": [],
             "Y": [],
             "Z": []
-          },
-          "description": "Command definition slots. {\"(A to Z)\" => [\"some.command0\",\"other.command1\"], ...}"
+          }
         }
       }
     },
