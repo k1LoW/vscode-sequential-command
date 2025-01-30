@@ -1,0 +1,205 @@
+{
+  "name": "sequential-command",
+  "displayName": "sequential-command",
+  "description": "Many commands into one command for VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "sequential-command",
+      "properties": {
+        "sequential-command.sequenceTimeout": {
+          "type": "number",
+          "default": 3000,
+          "description": "Timeout to clear the command sequence."
+        },
+        "sequential-command.definitions": {
+          "type": "object",
+          "default": {
+            "A": [
+              "cursorLineStart",
+              "cursorTop",
+              "sequential-command.seqReturn"
+            ],
+            "B": [
+              "cursorLineEnd",
+              "cursorBottom",
+              "sequential-command.seqReturn"
+            ],
+            "C": [],
+            "D": [],
+            "E": [],
+            "F": [],
+            "G": [],
+            "H": [],
+            "I": [],
+            "J": [],
+            "K": [],
+            "L": [],
+            "M": [],
+            "N": [],
+            "O": [],
+            "P": [],
+            "Q": [],
+            "R": [],
+            "S": [],
+            "T": [],
+            "U": [],
+            "V": [],
+            "W": [],
+            "X": [],
+            "Y": [],
+            "Z": []
+          },
+          "description": "Command definition slots. {\"(A to Z)\" => [\"some.command0\",\"other.command1\"], ...}"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "sequential-command.seqReturn",
+        "title": "Sequential Command: Return to initial position."
+      },
+      {
+        "command": "sequential-command.executeDefinedAsA",
+        "title": "Sequential Command: Execute defined as \"A\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsB",
+        "title": "Sequential Command: Execute defined as \"B\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsC",
+        "title": "Sequential Command: Execute defined as \"C\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsD",
+        "title": "Sequential Command: Execute defined as \"D\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsE",
+        "title": "Sequential Command: Execute defined as \"E\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsF",
+        "title": "Sequential Command: Execute defined as \"F\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsG",
+        "title": "Sequential Command: Execute defined as \"G\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsH",
+        "title": "Sequential Command: Execute defined as \"H\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsI",
+        "title": "Sequential Command: Execute defined as \"I\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsJ",
+        "title": "Sequential Command: Execute defined as \"J\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsK",
+        "title": "Sequential Command: Execute defined as \"K\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsL",
+        "title": "Sequential Command: Execute defined as \"L\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsM",
+        "title": "Sequential Command: Execute defined as \"M\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsN",
+        "title": "Sequential Command: Execute defined as \"N\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsO",
+        "title": "Sequential Command: Execute defined as \"O\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsP",
+        "title": "Sequential Command: Execute defined as \"P\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsQ",
+        "title": "Sequential Command: Execute defined as \"Q\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsR",
+        "title": "Sequential Command: Execute defined as \"R\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsS",
+        "title": "Sequential Command: Execute defined as \"S\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsT",
+        "title": "Sequential Command: Execute defined as \"T\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsU",
+        "title": "Sequential Command: Execute defined as \"U\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsV",
+        "title": "Sequential Command: Execute defined as \"V\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsW",
+        "title": "Sequential Command: Execute defined as \"W\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsX",
+        "title": "Sequential Command: Execute defined as \"X\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsY",
+        "title": "Sequential Command: Execute defined as \"Y\""
+      },
+      {
+        "command": "sequential-command.executeDefinedAsZ",
+        "title": "Sequential Command: Execute defined as \"Z\""
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
