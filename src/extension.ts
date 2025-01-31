@@ -12,17 +12,20 @@ class Controllor {
   public constructor() {
     this.reload();
   }
+
   get index(): number {
     return this._index;
   }
+
   get line(): number {
     return this._line;
   }
+
   get character(): number {
     return this._character;
   }
 
-  private clear() {
+  private clearState() {
     this._index = 0;
     this._line = 0;
     this._character = 0;
@@ -56,20 +59,20 @@ class Controllor {
     }
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
-      this.clear();
+      this.clearState();
       throw new Error("No active editor");
     }
     if (!this._defs[key]) {
-      this.clear();
+      this.clearState();
       throw new Error("No definition for key: " + key);
     }
     if (this._activeKey !== key) {
-      this.clear();
+      this.clearState();
       this._activeKey = key;
     }
     const commands = this._defs[key];
     if (commands.length < this._index) {
-      this.clear();
+      this.clearState();
     }
     if (commands.length === this._index) {
       this._index = 0;
@@ -82,7 +85,7 @@ class Controllor {
     const command = commands[this._index];
     this._index++;
     this._timer = setTimeout(() => {
-      this.clear();
+      this.clearState();
     }, this._timeout);
     return command;
   }
@@ -92,6 +95,7 @@ export function activate(context: vscode.ExtensionContext) {
   const ctrl = new Controllor();
 
   const keys: string[] = [];
+  
   // A-Z
   for (let i = 65; i <= 90; i++) {
     keys.push(String.fromCharCode(i));
@@ -110,7 +114,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(cursorReturn);
 
   for (const key of keys) {
-    const commandId = 'sequential-command.executeDefinedAs' + key;
+    const commandId = 'sequential-command.execute' + key;
     const disposable = vscode.commands.registerCommand(commandId, () => {
       try {
         const command = ctrl.command(key);

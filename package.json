@@ -2,20 +2,26 @@
   "name": "sequential-command",
   "displayName": "Sequential Command",
   "description": "Many commands into one command for VSCode",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "publisher": "k1low",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k1LoW/vscode-sequential-command"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
   ],
+  "license": "MIT",
   "activationEvents": [
     "onStartupFinished"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
-      "title": "sequential-command",
+      "title": "Sequential Command",
       "properties": {
         "sequential-command.sequenceTimeout": {
           "type": "number",
@@ -70,107 +76,107 @@
         "title": "Sequential Command: Return to initial position."
       },
       {
-        "command": "sequential-command.executeDefinedAsA",
+        "command": "sequential-command.executeA",
         "title": "Sequential Command: Execute defined as \"A\""
       },
       {
-        "command": "sequential-command.executeDefinedAsB",
+        "command": "sequential-command.executeB",
         "title": "Sequential Command: Execute defined as \"B\""
       },
       {
-        "command": "sequential-command.executeDefinedAsC",
+        "command": "sequential-command.executeC",
         "title": "Sequential Command: Execute defined as \"C\""
       },
       {
-        "command": "sequential-command.executeDefinedAsD",
+        "command": "sequential-command.executeD",
         "title": "Sequential Command: Execute defined as \"D\""
       },
       {
-        "command": "sequential-command.executeDefinedAsE",
+        "command": "sequential-command.executeE",
         "title": "Sequential Command: Execute defined as \"E\""
       },
       {
-        "command": "sequential-command.executeDefinedAsF",
+        "command": "sequential-command.executeF",
         "title": "Sequential Command: Execute defined as \"F\""
       },
       {
-        "command": "sequential-command.executeDefinedAsG",
+        "command": "sequential-command.executeG",
         "title": "Sequential Command: Execute defined as \"G\""
       },
       {
-        "command": "sequential-command.executeDefinedAsH",
+        "command": "sequential-command.executeH",
         "title": "Sequential Command: Execute defined as \"H\""
       },
       {
-        "command": "sequential-command.executeDefinedAsI",
+        "command": "sequential-command.executeI",
         "title": "Sequential Command: Execute defined as \"I\""
       },
       {
-        "command": "sequential-command.executeDefinedAsJ",
+        "command": "sequential-command.executeJ",
         "title": "Sequential Command: Execute defined as \"J\""
       },
       {
-        "command": "sequential-command.executeDefinedAsK",
+        "command": "sequential-command.executeK",
         "title": "Sequential Command: Execute defined as \"K\""
       },
       {
-        "command": "sequential-command.executeDefinedAsL",
+        "command": "sequential-command.executeL",
         "title": "Sequential Command: Execute defined as \"L\""
       },
       {
-        "command": "sequential-command.executeDefinedAsM",
+        "command": "sequential-command.executeM",
         "title": "Sequential Command: Execute defined as \"M\""
       },
       {
-        "command": "sequential-command.executeDefinedAsN",
+        "command": "sequential-command.executeN",
         "title": "Sequential Command: Execute defined as \"N\""
       },
       {
-        "command": "sequential-command.executeDefinedAsO",
+        "command": "sequential-command.executeO",
         "title": "Sequential Command: Execute defined as \"O\""
       },
       {
-        "command": "sequential-command.executeDefinedAsP",
+        "command": "sequential-command.executeP",
         "title": "Sequential Command: Execute defined as \"P\""
       },
       {
-        "command": "sequential-command.executeDefinedAsQ",
+        "command": "sequential-command.executeQ",
         "title": "Sequential Command: Execute defined as \"Q\""
       },
       {
-        "command": "sequential-command.executeDefinedAsR",
+        "command": "sequential-command.executeR",
         "title": "Sequential Command: Execute defined as \"R\""
       },
       {
-        "command": "sequential-command.executeDefinedAsS",
+        "command": "sequential-command.executeS",
         "title": "Sequential Command: Execute defined as \"S\""
       },
       {
-        "command": "sequential-command.executeDefinedAsT",
+        "command": "sequential-command.executeT",
         "title": "Sequential Command: Execute defined as \"T\""
       },
       {
-        "command": "sequential-command.executeDefinedAsU",
+        "command": "sequential-command.executeU",
         "title": "Sequential Command: Execute defined as \"U\""
       },
       {
-        "command": "sequential-command.executeDefinedAsV",
+        "command": "sequential-command.executeV",
         "title": "Sequential Command: Execute defined as \"V\""
       },
       {
-        "command": "sequential-command.executeDefinedAsW",
+        "command": "sequential-command.executeW",
         "title": "Sequential Command: Execute defined as \"W\""
       },
       {
-        "command": "sequential-command.executeDefinedAsX",
+        "command": "sequential-command.executeX",
         "title": "Sequential Command: Execute defined as \"X\""
       },
       {
-        "command": "sequential-command.executeDefinedAsY",
+        "command": "sequential-command.executeY",
         "title": "Sequential Command: Execute defined as \"Y\""
       },
       {
-        "command": "sequential-command.executeDefinedAsZ",
+        "command": "sequential-command.executeZ",
         "title": "Sequential Command: Execute defined as \"Z\""
       }
     ]
