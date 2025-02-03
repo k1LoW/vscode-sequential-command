@@ -35,3 +35,21 @@ VSCode does not provide a way to determine if a command is being executed contin
 Therefore, this extension clears the determination of sequential execution when `sequential-command.execute*` is not executed for a certain period of time (`sequential-command.sequenceTimeout`).
 
 If there is a way to resolve this, please let me know.
+
+## With [Awesome Emacs Keymap](https://marketplace.visualstudio.com/items?itemName=tuttieee.emacs-mcx)
+
+Use `emacs-mcx.*` instead.
+
+```json
+{
+ "sequential-command.definitions": {
+   "A": [
+     "emacs-mcx.moveBeginningOfLine",
+     "emacs-mcx.beginningOfBuffer",
+     "sequential-command.seqReturn"
+   ],
+
+[...]
+
+}
+```
