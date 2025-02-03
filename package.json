@@ -26,7 +26,7 @@
         "sequential-command.sequenceTimeout": {
           "type": "number",
           "description": "Timeout to clear the command sequence (msec).",
-          "default": 3000
+          "default": 1000
         },
         "sequential-command.definitions": {
           "type": "object",
