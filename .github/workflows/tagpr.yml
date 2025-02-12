@@ -28,10 +28,7 @@ jobs:
   deploy:
     needs: tagpr
     if: needs.tagpr.outputs.tagpr-tag != ''
-    runs-on: macos-latest
-    permissions:
-      contents: write
-      packages: write
+    runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
