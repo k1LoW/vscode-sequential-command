@@ -1,0 +1,51 @@
+name: tagpr
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tagpr:
+    runs-on: ubuntu-latest
+    outputs:
+      tagpr-tag: ${{ steps.run-tagpr.outputs.tag }}
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+      packages: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - id: run-tagpr
+        name: Run tagpr
+        uses: Songmu/tagpr@v1
+
+  deploy:
+    needs: tagpr
+    if: needs.tagpr.outputs.tagpr-tag != ''
+    runs-on: macos-latest
+    permissions:
+      contents: write
+      packages: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - name: Publish to Visual Studio Marketplace
+        Uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com

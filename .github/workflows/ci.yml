@@ -1,0 +1,26 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  job-test:
+    name: Test
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v4
+          
+      - name: Run tests
+        run: pnpm run test
