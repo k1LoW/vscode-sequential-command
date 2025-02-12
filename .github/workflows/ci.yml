@@ -22,7 +22,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.15.5
+          version: 9.x.x
           
       - name: Run tests
         run: pnpm run test
