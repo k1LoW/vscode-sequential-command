@@ -43,9 +43,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
       - name: Publish to Visual Studio Marketplace
-        Uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
