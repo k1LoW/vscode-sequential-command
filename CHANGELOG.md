@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.1.6](https://github.com/k1LoW/vscode-sequential-command/compare/v0.1.5...v0.1.6) - 2025-03-25
+
 ## [v0.1.5](https://github.com/k1LoW/vscode-sequential-command/compare/v0.1.4...v0.1.5) - 2025-03-25
 ### Other Changes
 - chore(deps-dev): bump the dependencies group across 1 directory with 7 updates by @dependabot in https://github.com/k1LoW/vscode-sequential-command/pull/13
