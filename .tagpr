@@ -33,3 +33,5 @@
 	vPrefix = true
 	releaseBranch = main
 	versionFile = package.json
+	majorLabels = "tagpr:major"
+	minorLabels = "tagpr:minor"
