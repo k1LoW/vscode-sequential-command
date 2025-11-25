@@ -2,7 +2,7 @@
   "name": "sequential-command",
   "displayName": "Sequential Command",
   "description": "Many commands into one command for VSCode",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "publisher": "k1low",
   "repository": {
     "type": "git",
